@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accordion Gallery</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gantari&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            }
+  
+        h1, h2, h3, h4, h5, h6, p{ font-family: 'Gantari', "Helvetica Neue", Helvetica, sans-serif; }
 
-        .container{ height: 100vh; display: flex; justify-content: center; align-items: center; width: 90vw;}
+
+        .container{ height: 90vh; display: flex; justify-content: center; align-items: center; width: 100vw;}
         .club{background-color: red;background-image: url('https://picsum.photos/200/300');}
         .diamond{background-color: rgb(0, 38, 255);background-image: url('https://images.unsplash.com/photo-1670003753538-92c8eac5d674?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');}
         .heart{background-color: rgb(221, 255, 0);background-image: url('https://picsum.photos/200/310');}
@@ -22,22 +24,66 @@
         }
 
         .card{
-            height: 300px;
+            height: 600px;
             cursor: pointer;
             flex: 0.5;
-            margin: 1rem;
-            border-radius: 2rem;
+            margin: .5rem;
+            border-radius: 3rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-size: 1rem;
+            flex: .5;
+            position: relative;
+            text-align: center;
+            transition: flex 0.8s ease-in;
+            color: #fafafa;
+        }
+
+        .card h4{
+            font-size: 1.5rem;
+            position: absolute;
+            bottom: .5rem;
+            right: .5rem;
+            text-shadow: 0 0 9px black;
+            opacity: 0;
+        }
+
+        .card.active{
+            flex: 5;
+        }
+
+        .card.active h4{
+            opacity: 1;
+        }
+
+        @media(max-width: 576px){
+            .card:nth-of-type(3),
+            .card:nth-of-type(4){display: none;}
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="cards">
-            <div class="card club">Club</div>
-            <div class="card diamond">Diamond</div>
-            <div class="card heart">Heart</div>
-            <div class="card spade">Spade</div>
+            <div class="card club active"><h4>Club</h4></div>
+            <div class="card diamond"><h4>Diamond</h4></div>
+            <div class="card heart"><h4>Heart</h4></div>
+            <div class="card spade"><h4>Spade</h4></div>
         </div>
     </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        addActive = () => {
+            e.classList.toggle('active')
+        }
+
+        cards.forEach( (panel) =>{
+            panel.addEventListener('click', addActive(panel))
+        })
+        console.log(cards);
+    </script>
 </body>
 </html>
