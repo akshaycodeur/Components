@@ -36,7 +36,7 @@
             flex: .5;
             position: relative;
             text-align: center;
-            transition: flex 0.8s ease-in;
+            transition: flex 0.3s ease-in;
             color: #fafafa;
         }
 
@@ -61,6 +61,8 @@
             .card:nth-of-type(3),
             .card:nth-of-type(4){display: none;}
         }
+
+        .hidden{display:none}
     </style>
 </head>
 <body>
@@ -74,16 +76,20 @@
     </div>
 
     <script>
-        const cards = document.querySelectorAll('.card');
-
-        addActive = () => {
-            e.classList.toggle('active')
-        }
-
-        cards.forEach( (panel) =>{
-            panel.addEventListener('click', addActive(panel))
-        })
+        let cards = document.querySelectorAll('.card');
         console.log(cards);
+        cards.forEach( card => {
+            card.addEventListener('click',  () =>{
+                removeActive();
+                card.classList.add('active')
+            });
+        })
+
+        function removeActive(){
+            cards.forEach( card => {
+                card.classList.remove('active');
+            })
+        }
     </script>
 </body>
 </html>
