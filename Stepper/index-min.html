@@ -62,7 +62,36 @@
       .buttons {
         margin-top: 3rem;
       }
-
+      button.btn {
+        background-color: #222;
+        border-radius: 4px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin: 0;
+        max-width: none;
+        min-height: 44px;
+        min-width: 10px;
+        outline: none;
+        overflow: hidden;
+        padding: 9px 20px 8px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 100%;
+      }
+      button.btn:hover,
+      button.btn:focus {
+        opacity: 0.75;
+      }
       .next.disabled {
         background-color: red;
       }
@@ -100,11 +129,7 @@
       }
     </style>
     <script>
-      let steps=document.querySelectorAll('.step'); 
-      let previous=document.querySelector('.previous');
-      let next=document.querySelector('.next');
-      
-      
+      let steps=document.querySelectorAll('.step'); let previous=document.querySelector('.previous') let next=document.querySelector('.next') const n=steps.length; let i=1; next.addEventListener('click', runNext) function runNext(e){ if(i < n ){ steps[i].classList.add('active'); i=i+1; console.log(i); // if(i=n){ // next.classList.add('disabled') //}}} console.log(steps); console.log(n);
     </script>
   </body>
 </html>
