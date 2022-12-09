@@ -39,6 +39,8 @@
 
     .step-section{display: none;}
     .step-active{display: block;}
+
+    .button-active{background-color: #3498db;}
   </style>
 </head>
 <body>
@@ -105,7 +107,10 @@
 
     let previousFunction = function(){
       if(count > 1){
-        steps[count].classList.remove('active');
+        steps[count-1].classList.remove('active');
+        stepsSections[count-1].classList.remove('step-active');
+        stepsSections[count-2].classList.add('step-active');
+        console.log('removed step'+ count);
         count--;
         console.log(count);
       };
