@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section hero is-dark">
+    <div class="container is-dark">
+        <h1 class="title">Stepper</h1>
+        <div class="stepper-form card">
+            <div class="progressbar">
+                <div class="steps">
+                    <div class="step active">1</div>
+                    <div class="step">2</div>
+                    <div class="step">3</div>
+                    <div class="step">4</div>
+                    <div class="step">5</div>
+                    <div class="step">6</div>
+                </div>
+            </div>
+            <div class="steps-content">
+                <div class="step-frame"></div>
+                <div class="step-frame"></div>
+                <div class="step-frame"></div>
+                <div class="step-frame"></div>
+                <div class="step-frame"></div>
+                <div class="step-frame"></div>
+            </div>
+            <div class="step-nav">
+                <button class="button next">Next</button>
+                <button class="button previousß">Previous</button>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <script>
+    let nextButton = document.querySelector('.next')
+    let previousButton = document.querySelector('.previous')
+    let steplist = document.querySelectorAll('.step')
+
+    console.log(steplist.length)
+
+    nextButton.addEventListener('click', () => {
+        steplist.forEach((step, index) => {
+            console.log(index, step);
+            let i = index +1;
+            step.classList.add('uno')
+           // steplist[ index + 1 ].classList.add('active');
+        });
+    });
+  </script>
+  </body>
+</html>

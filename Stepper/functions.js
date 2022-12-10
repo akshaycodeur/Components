@@ -14,7 +14,7 @@ let steps = document.querySelectorAll('.step');
       console.log('You clicked')
     }
 
-    let nextFunction = function(){
+    let nextFunction = () => {
       if(count < stepsNumber){
         steps[count].classList.add('active');
         stepsSections[count].classList.add('step-active');
@@ -36,5 +36,18 @@ let steps = document.querySelectorAll('.step');
       };
     }
 
-    nextButton.addEventListener('click',nextFunction);
+    const stepX = document.querySelectorAll('.stepX .step')
+
+    const btnNext = document.querySelector('.next');
+
+
+    nextButton.addEventListener('click', () => {
+        stepX.forEach((step, index) => {
+					console.log(step,index);
+            step[index +1 ].classList.add('xyz');
+        })
+    })
+
+    console.log(stepX)
+    //nextButton.addEventListener('click',nextFunction);
     previousButton.addEventListener('click',previousFunction);
