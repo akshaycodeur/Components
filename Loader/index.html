@@ -66,7 +66,7 @@
         console.log(counter);
         percentageDisplay.innerHTML = counter + '%';
         percentageDisplay.style.opacity = (100 - counter)/100;
-        backgroundEffect.style.filter= 'blur'+((100 - counter)/100)+'px';
+        backgroundEffect.style.filter= 'blur('+(100 - counter)+'px)';
       }
 
     }
