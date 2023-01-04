@@ -40,9 +40,12 @@
       padding: 2rem 1rem;
     }
 
-    .rectangular-box{
+    .rectangular--box{
       height: 3rem;
-      background-color: antiquewhite;
+      background-color: #343434;
+      width: 50%;
+      margin-top: 5rem;
+      border-radius: 1rem;
     }
 
   </style>
@@ -65,6 +68,21 @@
     <div class="rectangular--box">
     </div>
 
+    <div class="rectangular--box">
+    </div>
+
+    <div class="rectangular--box">
+    </div>
+
+    <div class="rectangular--box">
+    </div>
+
+    <div class="rectangular--box">
+    </div>
+
+    <div class="rectangular--box">
+    </div>
+
   </div>
 
   <script>
@@ -73,6 +91,15 @@
     // trigger event on scroll
       // initiate trigger
       // calculate distance until the screen height(required) hits the item which needs to animate
+
+      let windowHeight = window.innerHeight;
+      console.log(windowHeight);
+
+      window.addEventListener('scroll', displayHeight);
+
+      function displayHeight(){
+        console.log(windowHeight);
+      }
   </script>
 </body>
 </html>
