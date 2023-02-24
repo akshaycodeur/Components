@@ -1,16 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var addressInput = document.getElementById("address-input");
-    addressInput.addEventListener("input", function() {
-      var inputValue = addressInput.value;
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "https://api.addresslookup.com/search?query=" + inputValue, true);
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-          var addresses = JSON.parse(xhr.responseText);
-          // Do something with the addresses, for example populate a list
-        }
-      };
-      xhr.send();
-    });
-  });
-  
+const data = null;
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
+
+xhr.open("GET", "https://weatherapi-com.p.rapidapi.com/future.json?q=London&dt=2022-12-25");
+xhr.setRequestHeader("X-RapidAPI-Key", "SIGN-UP-FOR-KEY");
+xhr.setRequestHeader("X-RapidAPI-Host", "weatherapi-com.p.rapidapi.com");
+
+xhr.send(data);
