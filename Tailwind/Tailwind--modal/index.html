@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-full">
+    <section id="hero" class="w-full h-screen bg-gray-200 flex items-center dark:bg-slate-900">
+        <div class="container mx-auto flex space-x-4">
+            <div class="w-full md:w-1/2 grid justify-items-center">
+                <div class="">
+                    <img src="https://loremflickr.com/400/600"  class="rounded-md"/>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="preheading">
+                    <h4 class="text-sm text-orange-400 dark:text-slate-100 mt-10">Investing has never been easier</h4>
+                    <h1 class="text-5xl font-bold text-slate-900 dark:text-slate-100 mb-10">How to invest using <span class="text-orange-400">Investomania</span></h1>
+                    <hr>
+                    <p class="text-md ">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                </div>
+                <button id="registerNow" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-5">
+                    Register Now
+                  </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="hero" class="w-full h-screen bg-gray-200 flex items-center dark:bg-slate-900">
+        <div class="container mx-auto flex space-x-4">
+            <div class="w-full md:w-1/2 grid justify-items-center">
+                <div class="">
+                    <img src="https://loremflickr.com/400/600"  class="rounded-md"/>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="preheading">
+                    <h4 class="text-sm text-orange-400 dark:text-slate-100 mt-10">Investing has never been easier</h4>
+                    <h1 class="text-5xl font-bold text-slate-900 dark:text-slate-100 mb-10">How to invest using <span class="text-orange-400">Investomania</span></h1>
+                    <hr>
+                    <p class="text-md ">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                </div>
+                <button id="registerNow" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-5">
+                    Register Now
+                  </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="w-full h-screen bg-zinc-900  opacity-90 flex items-center fixed left-0 top-0 z-40">
+        <div id="modal" class="w-4/5 bg-slate-50 rounded-md p-6 relative z-50 mx-auto">
+            <div class="heading flex justify-between border-b-2 mb-5">
+                <h3 class="text-2xl align-self-left">The secret that was long hidden</h3>
+                <div class="text-right hover:cursor-pointer" id="modalClose">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </div>
+            </div>
+            <div class="content">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</div>
+            <div class="buttons w-fulljustify-items-center flex">
+                <button id="registerNow"
+                    class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded my-5 mx-auto">
+                    Register Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
