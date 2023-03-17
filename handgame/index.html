@@ -38,12 +38,24 @@
             rockBtn = document.getElementById("Rock");
             paperBtn = document.getElementById("Paper");
             scissorsBtn = document.getElementById("Scissors");
+            let userInput;
+            rockBtn.addEventListener("click", getUserInput);
+            paperBtn.addEventListener("click", getUserInput);
+            scissorsBtn.addEventListener("click", getUserInput);
 
-            rockBtn.addEventListener("click", userInput);
-
-            function userInput(e) {
-                console.log(e);
+            function getUserInput(e) {
+                userInput = e.target.id;
+                console.log(userInput);
             }
+
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+            computerInput = getRndInteger(0, 3);
+            console.log(computerInput);
+            gameChoice = ["Rock", "Paper", "Scissors"];
+            computerChoice = gameChoice[computerInput];
+            console.log(computerChoice);
         </script>
     </body>
 </html>
