@@ -34,7 +34,8 @@
                         <input
                             class="form-checkbox h-4 w-4 text-indigo-600"
                             type="checkbox"
-                        /><span class="ml-2 flex-1">Testing</span
+                        /><span class="ml-2 flex-1"
+                            >Issue 1 : How/where do practice ForEach?</span
                         ><button class="text-red-400 hover:text-sky-400">
                             X
                         </button>
@@ -43,7 +44,9 @@
                         <input
                             class="form-checkbox h-4 w-4 text-indigo-600"
                             type="checkbox"
-                        /><span class="ml-2 flex-1">Testing</span
+                        /><span class="ml-2 flex-1"
+                            >I am not sure what should be the order of all my
+                            code</span
                         ><button class="text-red-400 hover:text-sky-400">
                             X
                         </button>
@@ -78,6 +81,15 @@
             let taskList = document.querySelector("#taskList");
             addTask.addEventListener("click", addToList);
 
+            // Delete Event
+            let deleteBtns = document.querySelectorAll(".text-red-400");
+            deleteBtns.forEach((btn) => {
+                btn.addEventListener("click", (event) => {
+                    btn.parentElement.remove();
+                });
+            });
+
+            // Tickboxes Event
             let ticks = document.querySelectorAll(".form-checkbox");
             ticks.forEach((tick) => {
                 tick.addEventListener("click", (event) => {
@@ -91,10 +103,7 @@
                 });
             });
 
-            function strikeout() {
-                alert("1down");
-            }
-
+            // Input Event
             function addToList() {
                 let newTask = taskInput.value;
 
