@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div
+            class="container flex align-center mx-auto my-10 flex items-center"
+        >
+            <div class="bg-gray-100 p-4 rounded-md w-1/2 mx-auto">
+                <h2 class="text-xl font-bold mb-4">
+                    What is on your mind today?
+                </h2>
+
+                <div class="flex justify-center items-center">
+                    <input
+                        type="text"
+                        class="rounded-l-lg p-2 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white w-1/2"
+                        id="taskInput"
+                        placeholder="Add new task"
+                    />
+                    <button
+                        id="addTask"
+                        class="px-8 rounded-r-lg bg-teal-500 text-gray-50 font-bold p-2 uppercase border-green-600 border-t border-b border-r hover:bg-teal-600"
+                    >
+                        Add Task
+                    </button>
+                </div>
+
+                <ul class="divide-y divide-gray-200" id="taskList">
+                    <li class="flex items-center py-2">
+                        <input
+                            class="form-checkbox h-4 w-4 text-indigo-600"
+                            type="checkbox"
+                        /><span class="ml-2 flex-1">Testing</span
+                        ><button class="text-red-400 hover:text-sky-400">
+                            X
+                        </button>
+                    </li>
+                    <li class="flex items-center py-2">
+                        <input
+                            class="form-checkbox h-4 w-4 text-indigo-600"
+                            type="checkbox"
+                        /><span class="ml-2 flex-1">Testing</span
+                        ><button class="text-red-400 hover:text-sky-400">
+                            X
+                        </button>
+                    </li>
+                    <li class="flex items-center py-2">
+                        <input
+                            class="form-checkbox h-4 w-4 text-indigo-600"
+                            type="checkbox"
+                        /><span class="ml-2 flex-1">Testing</span
+                        ><button class="text-red-400 hover:text-sky-400">
+                            X
+                        </button>
+                    </li>
+                    <li class="flex items-center py-2">
+                        <input
+                            class="form-checkbox h-4 w-4 text-indigo-600"
+                            type="checkbox"
+                        /><span class="ml-2 flex-1">Testing</span
+                        ><button class="text-red-400 hover:text-sky-400">
+                            X
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            console.clear();
+
+            let taskInput = document.querySelector("#taskInput");
+            let addTask = document.querySelector("#addTask");
+            let taskList = document.querySelector("#taskList");
+            addTask.addEventListener("click", addToList);
+
+            let ticks = document.querySelectorAll(".form-checkbox");
+            ticks.forEach((tick) => {
+                tick.addEventListener("click", (event) => {
+                    if (tick.checked) {
+                        tick.nextElementSibling.classList.add("line-through");
+                    } else {
+                        tick.nextElementSibling.classList.remove(
+                            "line-through"
+                        );
+                    }
+                });
+            });
+
+            function strikeout() {
+                alert("1down");
+            }
+
+            function addToList() {
+                let newTask = taskInput.value;
+
+                if (newTask == "") {
+                    alert("fill up field");
+                } else {
+                    //Create a list item
+                    newListItem = document.createElement("li");
+                    taskList.appendChild(newListItem);
+                    newListItem.classList.add("flex", "items-center", "py-2");
+
+                    //create checkbox
+                    newTickbox = document.createElement("input");
+                    newTickbox.classList.add(
+                        "form-checkbox",
+                        "h-4",
+                        "w-4",
+                        "text-indigo-600"
+                    );
+                    newTickbox.type = "checkbox";
+                    newListItem.appendChild(newTickbox);
+
+                    //creating Span
+                    newSpan = document.createElement("span");
+                    newSpan.classList.add("ml-2", "flex-1");
+                    newSpan.innerText = newTask;
+                    newListItem.appendChild(newSpan);
+
+                    //create CloseButton
+                    newCloseBtn = document.createElement("button");
+                    newCloseBtn.classList.add(
+                        "text-red-400",
+                        "hover:text-sky-400"
+                    );
+                    newCloseBtn.innerText = "X";
+                    newListItem.appendChild(newCloseBtn);
+                }
+            }
+        </script>
+    </body>
+</html>
